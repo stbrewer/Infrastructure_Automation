@@ -1,0 +1,13 @@
+#Configure the AWS Provider
+
+provider "aws" {
+	access_key = "put access key here from AWS IAM"
+	secret_key = "put secret key here from AWS IAM"
+	region	= "us-east-1"
+}
+
+#Create a Web Server
+resource "aws_instance" "web" {
+	ami	= "ami-035be7bafff33b6b6"
+	instance_type = "t2.micro"
+}
